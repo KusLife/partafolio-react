@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import './Contact.css';
 
 function About() {
   return (
@@ -6,7 +7,7 @@ function About() {
       <h2>About me</h2>
       <p>This is a short description about me.</p>
     </section>
-  )
+  );
 }
 
-export default About
+export default About;
