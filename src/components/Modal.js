@@ -10,7 +10,7 @@ export default function Modal({ message, onClose }) {
           e.stopPropagation();
         }}
       >
-        <p>{message}</p>
+        <p className='modal-message'>{message}</p>
         <button onClick={onClose}>Close</button>
       </div>
     </div>

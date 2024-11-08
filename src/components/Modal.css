@@ -26,6 +26,14 @@
   margin-bottom: 20px;
 }
 
+.modal-message {
+  width: 90%; /* Adjust to fit your layout */
+  max-width: 400px; /* Maximum width for the modal */
+  padding: 20px;
+  overflow-wrap: break-word; /* Ensures words break if too long */
+  white-space: normal; /* Allows wrapping onto multiple lines */
+}
+
 .modal-content button {
   padding: 8px 16px;
   font-size: 1rem;
