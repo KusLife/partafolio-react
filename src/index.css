@@ -17,3 +17,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Example: Importing Poppins and Roboto */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* Apply fonts */
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, .about-section h3 {
+  font-family: 'Poppins', sans-serif;
+}
+

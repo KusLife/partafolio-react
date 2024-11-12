@@ -9,21 +9,21 @@ export default function Footer() {
         &copy; {new Date().getFullYear()} KYRYLO All Rights Reserved.
         <span className="social-icons">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/KusLife"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/kuslife"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaLinkedin />
           </a>
           <a
-            href="https://instagram.com/yourusername"
+            href="https://instagram.com/Kuslife"
             target="_blank"
             rel="noopener noreferrer"
           >
