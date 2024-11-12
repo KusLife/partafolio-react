@@ -30,3 +30,16 @@ h1, h2, h3, .about-section h3 {
   font-family: 'Poppins', sans-serif;
 }
 
+
+@media (min-width: 600px) {
+  body {
+    font-size: 16px; /* Larger font for tablet screens and up */
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 18px; /* Even larger font for small desktops and up */
+  }
+}
+

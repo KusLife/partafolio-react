@@ -1,34 +1,78 @@
 .about {
-  display: flex;
-  justify-content: space-around;
-
-  /* max-width: 96%; */
+  position: relative;
   padding: 20px;
-  background-color: #f0f2f5;
-  border-radius: 10px;
+  background-color: rgba(240, 242, 245, 0.7);
+  border-radius: 20px;
   margin: 20px 2%;
+  overflow: hidden;
+}
 
+.about-container {
+  display: flex;
+  justify-content: space-around; /* Align sections horizontally */
+  align-items: flex-start; /* Align sections at the top */
+  width: 90%; /* Limit the container's width */
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the container */
+  z-index: 10; /* Make sure the sections are on top of the wave */
 }
 
 .about-section {
   flex: 1;
   padding: 20px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-section:hover  {
+  transform: scale(1.15); /* Slightly zoom in on hover */
+  /* background-color: #555; */
+}
+
+.wave-background svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* Ensures the wave stays behind the content */
+}
+
+.about-section:nth-child(odd) {
+  transform: translateX(-10px); /* Slightly shift odd sections left */
+}
+
+.about-section:nth-child(even) {
+  transform: translateX(10px); /* Slightly shift even sections right */
 }
 
 .intro {
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 100;
+}
+
+.profile-pic-frame {
+  width: 100%;
+  height: auto; /* Or set dynamically based on content */
+  overflow: hidden; /* Prevents overflow */
+  border-radius: 10%; /* Optional: rounded frame */
 }
 
 .profile-pic {
-  /* width: 120px; */
-  height: 200px;
-  /* object-fit: cover; */
+  width: 100%;
+  height: auto; /* set it dinamic */
   border-radius: 10%;
   margin-bottom: 10px;
+  transition: transform 0.3s ease-in-out;
 }
+
+.about-section:hover .profile-pic {
+  transform: scale(1.5); /* Slight zoom in for the image */
+} 
+
 
 h2 {
   margin: 10px 0;
@@ -67,7 +111,61 @@ h2 {
 }
 
 .icon {
-  font-size: 1.5rem; /* Adjust size as needed */
+  font-size: 2.5rem; /* Adjust size as needed */
   color: #0073e6; /* Choose a color to match your theme */
-  margin-bottom: 5px;
+  margin: 10%;
+}
+
+/* 
+.skills ul,
+.languages ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skills li,
+.languages li {
+  font-size: 1.1rem;
+  margin: 5px 0;
+} */
+
+@media (max-width: 1140px) {
+  .about-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-areas: 'intro intro intro' 'skills experience languages';
+  }
+
+  .about-section.intro {
+    grid-area: intro;
+  }
+
+  .about-section.skills {
+    grid-area: skills;
+  }
+
+  .about-section.experience {
+    grid-area: experience;
+  }
+
+  .about-section.languages {
+    grid-area: languages;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    display: flex;
+    justify-content: space-around; /* Align sections horizontally */
+    flex-direction: column; /* Stack sections vertically on small screens */
+    align-items: center;
+  }
+
+  .about-section {
+    width: 80%; /* Allow sections to take up more space on small screens */
+  }
+
+  .icon {
+    margin: 1%;
+  }
 }
