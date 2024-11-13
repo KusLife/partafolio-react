@@ -27,17 +27,21 @@
 }
 
 .about-section:hover  {
-  transform: scale(1.15); /* Slightly zoom in on hover */
-  /* background-color: #555; */
+  transform: scale(1.15); 
 }
 
 .wave-background svg {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  left: -2%;
+  width: 110%;
   z-index: -1; /* Ensures the wave stays behind the content */
+  will-change: transform; /* Optimizes performance */
 }
+
+.wave-background svg:nth-child(1) { bottom: 0; }
+.wave-background svg:nth-child(2) { bottom: -20px; }
+.wave-background svg:nth-child(3) { bottom: -40px; }
 
 .about-section:nth-child(odd) {
   transform: translateX(-10px); /* Slightly shift odd sections left */
@@ -56,21 +60,21 @@
 
 .profile-pic-frame {
   width: 100%;
-  height: auto; /* Or set dynamically based on content */
-  overflow: hidden; /* Prevents overflow */
-  border-radius: 10%; /* Optional: rounded frame */
+  height: auto;  
+  overflow: hidden;  
+  border-radius: 10%; 
 }
 
 .profile-pic {
   width: 100%;
-  height: auto; /* set it dinamic */
+  height: auto; 
   border-radius: 10%;
   margin-bottom: 10px;
   transition: transform 0.3s ease-in-out;
 }
 
 .about-section:hover .profile-pic {
-  transform: scale(1.5); /* Slight zoom in for the image */
+  transform: scale(1.5); 
 } 
 
 
@@ -106,28 +110,31 @@ h2 {
 }
 
 .languages li::before {
-  content: '🌐 '; /* Use an emoji or icon to highlight language entries */
+  content: '🌐 '; 
   margin-right: 8px;
 }
 
 .icon {
-  font-size: 2.5rem; /* Adjust size as needed */
-  color: #0073e6; /* Choose a color to match your theme */
+  font-size: 2.5rem;  
+  color: #0073e6;  
   margin: 10%;
 }
 
-/* 
-.skills ul,
-.languages ul {
-  list-style: none;
-  padding: 0;
+/* Define the swing animation */
+@keyframes swing {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
 }
 
-.skills li,
-.languages li {
-  font-size: 1.1rem;
-  margin: 5px 0;
-} */
+/* Apply the swing animation on hover */
+.about-section:hover .icon {
+  animation: swing 0.5s ease-in-out;
+}
+
+
 
 @media (max-width: 1140px) {
   .about-container {

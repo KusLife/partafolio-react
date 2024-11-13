@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import prof_pic from '../assets/pictures/prof_pic.JPEG';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,14 +8,61 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import './About.css';
 
+
+// Simple function to generate random oscillations
+function smoothNoise(seed, speed = 0.1) {
+  return Math.sin(seed * speed) * 0.5 + Math.cos(seed * speed * 1.2) * 0.5;
+}
+
 function About() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [waveOffsets, setWaveOffsets] = useState([0, 0, 0]);
+
+  useEffect(() => {
+    let animationFrameId;
+    const damping = 0.95; // damping factor for smooth stopping
+
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      setMousePos({ x, y });
+    };
+
+    const animateWaves = () => {
+      setWaveOffsets((offsets) =>
+        offsets.map((offset, index) => {
+          const speed = 0.05 + index * 0.02; // unique speed per wave
+          const direction = index % 2 === 0 ? 1 : -1; // alternate directions
+          const noiseFactor = smoothNoise(offset, speed);
+          return  offset * damping + direction * noiseFactor * mousePos.y * 0.1;
+        })
+      );
+
+      animationFrameId = requestAnimationFrame(animateWaves);
+    };
+
+    document
+      .querySelector('.about')
+      .addEventListener('mousemove', handleMouseMove);
+    animationFrameId = requestAnimationFrame(animateWaves);
+
+    return () => {
+      document
+        .querySelector('.about')
+        .removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, [mousePos]);
+
+
+
   return (
     <section className="about">
       <div className="about-container">
         {/* Part 1: Intro */}
         <div className="about-section intro">
           <div className="profile-pic-frame">
-            <img src={prof_pic} alt="Your Name" className="profile-pic"/>
+            <img src={prof_pic} alt="Your Name" className="profile-pic" />
           </div>
           <h2>Hi, I'm Kyrylo but you may call me just Kyro</h2>
           <p>
@@ -39,9 +86,9 @@ function About() {
         {/* Part 3: Experience & Education */}
         <div className="about-section experience">
           <h3>Experience & Education</h3>
-          <p>Online courses</p>
-          <p>Selfdeddacting</p>
-          <p>Personal projects</p>
+          <p>Completed Online Courses</p>
+          <p>Self-Taught</p>
+          <p>Project-Based Experience</p>
           <FontAwesomeIcon icon={faGraduationCap} className="icon" />
         </div>
 
@@ -59,14 +106,20 @@ function About() {
 
       {/* 3D Wave Background */}
       <div className="wave-background">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+          style={{
+            transform:  `translate(${waveOffsets[0] * 10}px, ${waveOffsets[0] * 5}px)`,
+          }}>
           <path
             // fill="#0073e6"
             d="M0,64L48,85.3C96,107,192,149,288,160C384,171,480,149,576,160C672,171,768,213,864,202.7C960,192,1056,128,1152,117.3C1248,107,1344,149,1392,160L1440,171V320H1392C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           ></path>
         </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+         style={{
+          transform: `translate(${waveOffsets[1] * 18}px, ${waveOffsets[1] * 4}px)`,
+        }}>
           <path
             fill="#0099ff"
             fill-opacity="0.7"
@@ -74,7 +127,10 @@ function About() {
           ></path>
         </svg>
 
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"
+         style={{
+           transform: `translate(${waveOffsets[2] * 16}px, ${waveOffsets[2] * 3}px)`,
+        }}>
           <path
             fill="#0099ff"
             fill-opacity="0.9"
