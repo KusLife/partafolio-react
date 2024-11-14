@@ -55,7 +55,6 @@ function About() {
   }, [mousePos]);
 
 
-
   return (
     <section className="about">
       <div className="about-container">
