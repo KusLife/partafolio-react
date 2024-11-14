@@ -2,62 +2,88 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
 
 function Header() {
-  const [position, setPosition] = useState({ x: 50, y: 50 });
   const containerRef = useRef(null);
 
+  const words = [
+    'JavaScript',
+    'React',
+    'HTML',
+    'CSS',
+    'Node.js',
+    'Frontend',
+    'Backend',
+    'API',
+    'Webpack',
+    'Git',
+    'Typescript',
+    'Redux',
+    'GraphQL',
+  ];
+
+  // Initialize the words with random positions and speeds
+  const [wordPositions, setWordPositions] = useState(
+    words.map(() => ({
+      top: Math.random() * 80, // Random Y position within container height range (e.g., 0 to 80%)
+      left: Math.random() * 100, // Start at a random position within the container
+      speed: 0.15 + Math.random() * 1, // Random speed between 0.5 and 2.5
+      hidden: false, // Initial hidden state is false
+    }))
+  );
+
+  const [allHidden, setAllHidden] = useState(false);
+
+  // Update each word's position independently
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      if (!containerRef.current) return;
+    const interval = setInterval(() => {
+      setWordPositions((prevPositions) =>
+        prevPositions.map((pos) => ({
+          ...pos,
+          left: pos.left < 100 ? pos.left + pos.speed : -10, // Reset position when it reaches the end
+        }))
+      );
+    }, 50); // Update every 50ms
 
-      const containerRect = containerRef.current.getBoundingClientRect();
-      const h1X = position.x;
-      const h1Y = position.y;
-      const mouseX = e.clientX - containerRect.left;
-      const mouseY = e.clientY - containerRect.top;
-      const pushDistance = 50; // Minimum distance to start pushing
+    return () => clearInterval(interval);
+  }, []);
 
-      // Calculate the distance between the mouse and `h1`
-      const distanceX = mouseX - h1X;
-      const distanceY = mouseY - h1Y;
-      const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
+  // Check if all words are hidden and update allHidden state
+  useEffect(() => {
+    if (wordPositions.every((pos) => pos.hidden)) {
+      setAllHidden(true);
+    }
+  }, [wordPositions]);
 
-      // Push `h1` away if the pointer is within `pushDistance`
-      if (distance < pushDistance) {
-        // Calculate push direction by normalizing the distance
-        const angle = Math.atan2(distanceY, distanceX);
-        const pushX = Math.cos(angle) * pushDistance;
-        const pushY = Math.sin(angle) * pushDistance;
-
-        // New position with bounds checking
-        const newX = Math.min(
-          Math.max(h1X - pushX, 0),
-          containerRect.width - 100 // Adjust for `h1` size
-        );
-        const newY = Math.min(
-          Math.max(h1Y - pushY, 0),
-          containerRect.height - 40 // Adjust for `h1` size
-        );
-
-        setPosition({ x: newX, y: newY });
-      }
-    };
-
-    const container = containerRef.current;
-    container.addEventListener('mousemove', handleMouseMove);
-
-    return () => container.removeEventListener('mousemove', handleMouseMove);
-  }, [position]);
+  // Handle hover event to hide the word
+  const handleHover = (index) => {
+    setWordPositions((prevPositions) =>
+      prevPositions.map((pos, i) =>
+        i === index ? { ...pos, hidden: true } : pos
+      )
+    );
+  };
 
   return (
-    <header className="header">
+    <header>
       <div className="h1-container" ref={containerRef}>
-        <h1
-          style={{
-            transform: `translate(${position.x}px, ${position.y}px)`,
-          }}
-        >
-          KYRYLO
-        </h1>
+        {allHidden ? (
+          <h1 className="center-name">KYRYLO</h1>
+        ) : (
+          words.map((word, index) => (
+            <span
+              key={index}
+              className={`moving-word ${
+                wordPositions[index].hidden ? 'hidden' : ''
+              }`}
+              style={{
+                left: `${wordPositions[index].left}%`,
+                top: `${wordPositions[index].top}%`,
+              }}
+              onMouseEnter={() => handleHover(index)}
+            >
+              {word}
+            </span>
+          ))
+        )}
       </div>
     </header>
   );

@@ -6,37 +6,54 @@ header {
   position: relative;
 }
 
+
+
 .h1-container {
   position: relative;
   width: 100%;
-  height: 120px;
-  margin: 0 auto;
+  height: 12vw;
   overflow: hidden;
-  /* margin-bottom: 20px; */
+  cursor: target;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin: 0 auto  ;
+/* Styling for the moving word */
+.moving-word {
   position: absolute;
-  transition: transform 0.5s ease-out;
-  /* top: 50%;
-  left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  /* transition: transform 0.1s ease; */
-  white-space: nowrap;
-  border-radius: 20px;
-  background-color: blue;
-  /* will-change: transform; */
+  font-size: 1.5rem;
+  /* top: 50%;  */
+  /* transform: translateY(-50%); */
+  transition: opacity 0.3s ease;
 }
-/* 
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-size: 1.2rem;
+/* Hide the word with a fade effect */
+.moving-word.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent further hover events */
 }
 
-nav a:hover {
-  text-decoration: underline;
-} */
+/* Centered name style */
+.center-name {
+  position: absolute;
+  font-size: 15vw;
+  font-weight: bold;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  animation: fadeIn 12s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Adjust font size on smaller screens */
+@media (max-width: 600px) {
+  .center-name {
+    font-size: 8vw;
+  }
+}
