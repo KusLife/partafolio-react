@@ -62,6 +62,22 @@ function Header() {
     );
   };
 
+  const [dots, setDots] = useState([]);
+
+  // Generate random dots on mount
+  useEffect(() => {
+    const generateDots = () => {
+      const dotArray = Array.from({ length: 15 }, () => ({
+        x: Math.random() * 100, // Random X position (0-100%)
+        y: Math.random() * 100, // Random Y position (0-100%)
+        delay: Math.random() * 2, // Random animation delay (0-2s)
+      }));
+      setDots(dotArray);
+    };
+
+    generateDots();
+  }, []);
+
   return (
     <header>
       <div className="h1-container" ref={containerRef}>
@@ -84,6 +100,19 @@ function Header() {
             </span>
           ))
         )}
+
+        {/* Render twinkling dots */}
+        {dots.map((dot, index) => (
+          <span
+            key={index}
+            className="twinkling-dot"
+            style={{
+              top: `${dot.y}%`,
+              left: `${dot.x}%`,
+              animationDelay: `${dot.delay}s`,
+            }}
+          ></span>
+        ))}
       </div>
     </header>
   );
