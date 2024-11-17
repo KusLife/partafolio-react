@@ -6,10 +6,7 @@ header {
   position: relative;
   box-shadow: 0px 10px 10px 10px rgba(40, 44, 52, 1.5); /* Adds a blur-like shadow at the bottom */
 }
-
-
  
-
 .h1-container {
   position: relative;
   width: 100%;
@@ -21,7 +18,7 @@ header {
 /* Styling for the moving word */
 .moving-word {
   position: absolute;
-  font-size: 1.5rem;
+  font-size: 2vw;
   transition: opacity 0.3s ease;
   animation: fadeIn 2s ease-out;
 }  
