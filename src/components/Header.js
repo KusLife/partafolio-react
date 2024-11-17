@@ -3,6 +3,8 @@ import './Header.css';
 
 function Header() {
   const containerRef = useRef(null);
+  const [showName, setShowName] = useState(false);
+  const [restartFlow, setRestartFlow] = useState(false);
 
   const words = [
     'JavaScript',
@@ -62,12 +64,43 @@ function Header() {
     );
   };
 
+  // Manage showing the name and restarting words
+  useEffect(() => {
+    if (allHidden) {
+      setShowName(true);
+
+      const timeout = setTimeout(() => {
+        setShowName(false);
+        setAllHidden(false);
+        setWordPositions(
+          words.map(() => ({
+            top: Math.random() * 80,
+            left: Math.random() * 100,
+            speed: 0.15 + Math.random() * 1,
+            hidden: false,
+          }))
+        );
+        setRestartFlow((prev) => !prev);
+      }, 15000); // Show name for 10 seconds
+
+      // Add fade-out effect after 8.5 seconds (before full timeout)
+      const fadeTimeout = setTimeout(() => {
+        document.querySelector('.center-name').classList.add('hidden');
+      }, 11000);
+
+      return () => {
+        clearTimeout(timeout);
+        clearTimeout(fadeTimeout);
+      };
+    }
+  }, [allHidden]);
+
   const [dots, setDots] = useState([]);
 
   // Generate random dots on mount
   useEffect(() => {
     const generateDots = () => {
-      const dotArray = Array.from({ length: 15 }, () => ({
+      const dotArray = Array.from({ length: 45 }, () => ({
         x: Math.random() * 100, // Random X position (0-100%)
         y: Math.random() * 100, // Random Y position (0-100%)
         delay: Math.random() * 2, // Random animation delay (0-2s)
