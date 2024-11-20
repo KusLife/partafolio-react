@@ -1,0 +1,187 @@
+.soft-skills {
+  position: relative;
+  padding: 20px;
+  background-color: rgba(240, 242, 245, 0.7);
+  border-radius: 20px;
+  margin: 4% 2%;
+  overflow: hidden;
+}
+
+.soft-skills-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 10;
+}
+
+.soft-skills-section {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.soft-skills-section:hover {
+  transform: scale(1.15);
+}
+
+.soft-skills-section:nth-child(odd) {
+  transform: translateX(-10px);
+}
+
+.soft-skills-section:nth-child(even) {
+  transform: translateX(10px);
+}
+
+/* Intro Section */
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 100;
+}
+ 
+ 
+ 
+/* Headings */
+h2 {
+  margin: 10px 0;
+  color: #333;
+}
+
+h3 {
+  margin: 10px 0;
+  color: #0073e6;
+}
+
+/* Skills Section */
+.skillset ul {
+  list-style: none;
+  padding: 0;
+}
+
+.skillset li {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #0073e6;
+}
+
+/* Projects Section */
+.projects p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Languages Section */
+.languages ul {
+  list-style: none;
+  padding: 0;
+}
+
+.languages li {
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.languages li::before {
+  content: '🌐 ';
+  margin-right: 8px;
+}
+
+/* Icons */
+.icon {
+  font-size: 2.5rem;
+  color: #0073e6;
+  margin: 10%;
+}
+
+/* Swing Animation */
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.soft-skills-section:hover .icon {
+  animation: swing 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1140px) {
+  .soft-skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 'intro intro intro' 'skillset projects languages';
+  }
+
+  .intro {
+    grid-area: intro;
+  }
+
+  .skillset {
+    grid-area: skillset;
+  }
+
+  .projects {
+    grid-area: projects;
+  }
+
+  .languages {
+    grid-area: languages;
+  }
+}
+
+@media (max-width: 768px) {
+  .soft-skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .soft-skills-section {
+    width: 80%;
+  }
+
+  .icon {
+    margin: 1%;
+  }
+}
+
+/* Background Waves */
+.soft-skills-background svg {
+  position: absolute;
+  bottom: 0;
+  left: -2%;
+  width: 110%;
+  z-index: -1;
+  will-change: transform;
+}
+
+.soft-skills-background svg:nth-child(1) {
+  bottom: 0;
+}
+
+.soft-skills-background svg:nth-child(2) {
+  bottom: -20px;
+}
+
+.soft-skills-background svg:nth-child(3) {
+  bottom: -40px;
+}

@@ -3,18 +3,18 @@
   padding: 20px;
   background-color: rgba(240, 242, 245, 0.7);
   border-radius: 20px;
-  margin: 4% 2% ;
+  margin: 4% 2%;
   overflow: hidden;
 }
 
 .about-container {
   display: flex;
-  justify-content: space-around; /* Align sections horizontally */
-  align-items: flex-start; /* Align sections at the top */
-  width: 90%; /* Limit the container's width */
-  max-width: 1200px; /* Max width for larger screens */
-  margin: 0 auto; /* Center the container */
-  z-index: 10; /* Make sure the sections are on top of the wave */
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 10;
 }
 
 .about-section {
@@ -26,8 +26,8 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.about-section:hover  {
-  transform: scale(1.15); 
+.about-section:hover {
+  transform: scale(1.15);
 }
 
 .wave-background svg {
@@ -39,9 +39,15 @@
   will-change: transform; /* Optimizes performance */
 }
 
-.wave-background svg:nth-child(1) { bottom: 0; }
-.wave-background svg:nth-child(2) { bottom: -20px; }
-.wave-background svg:nth-child(3) { bottom: -40px; }
+.wave-background svg:nth-child(1) {
+  bottom: 0;
+}
+.wave-background svg:nth-child(2) {
+  bottom: -20px;
+}
+.wave-background svg:nth-child(3) {
+  bottom: -40px;
+}
 
 .about-section:nth-child(odd) {
   transform: translateX(-10px); /* Slightly shift odd sections left */
@@ -60,27 +66,64 @@
 
 .profile-pic-frame {
   width: 100%;
-  height: auto;  
-  overflow: hidden;  
-  border-radius: 10%; 
+  height: auto;
+  border-radius: 10%;
+  overflow: hidden;
+
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
-.profile-pic {
+.profile-pic-frame img {
   width: 100%;
-  height: auto; 
-  border-radius: 10%;
-  margin-bottom: 10px;
+  height: auto;
+  
   transition: transform 0.3s ease-in-out;
 }
 
+
+.profile-pic-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px; /* Match the border-radius of the image */
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 90%);
+  pointer-events: none; /* Ensure it doesn’t interfere with interactions */
+  z-index: 1; /* Place above the image */
+  transition: transform 0.3s ease-out;
+
+}
+
+.profile-pic-frame::before {
+  content: '';
+  position: absolute;
+  top: -5%;
+  left: -5%;
+  right: -5%;
+  bottom: -5%;
+  border-radius: 15px; /* Match the image's corners */
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.2), transparent);
+  filter: blur(30px); /* Creates the soft blur around the image */
+  z-index: 0; /* Place below the image */
+
+}
+
+
+
+
 .about-section:hover .profile-pic {
-  transform: scale(1.5); 
-} 
+  transform: scale(1.5);
+}
 
-
-h2 {
+.intro h2 {
   margin: 10px 0;
   color: #333;
+  line-height: 1.1;
 }
 
 .skills ul {
@@ -110,31 +153,39 @@ h2 {
 }
 
 .languages li::before {
-  content: '🌐 '; 
+  content: '🌐 ';
   margin-right: 8px;
 }
 
 .icon {
-  font-size: 2.5rem;  
-  color: #0073e6;  
+  font-size: 2.5rem;
+  color: #0073e6;
   margin: 10%;
 }
 
 /* Define the swing animation */
 @keyframes swing {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(10deg); }
-  50% { transform: rotate(-10deg); }
-  75% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Apply the swing animation on hover */
 .about-section:hover .icon {
   animation: swing 0.5s ease-in-out;
 }
-
-
 
 @media (max-width: 1140px) {
   .about-container {
@@ -184,11 +235,14 @@ h2 {
     z-index: -1; /* Ensures the wave stays behind the content */
     will-change: transform; /* Optimizes performance */
   }
-  
-  .wave-background svg:nth-child(1) { bottom: 0; }
-  .wave-background svg:nth-child(2) { bottom: -10px; }
-  .wave-background svg:nth-child(3) { bottom: -20px; }
-  
 
-
+  .wave-background svg:nth-child(1) {
+    bottom: 0;
+  }
+  .wave-background svg:nth-child(2) {
+    bottom: -10px;
+  }
+  .wave-background svg:nth-child(3) {
+    bottom: -20px;
+  }
 }

@@ -65,6 +65,11 @@
   margin: 10px 0;
 }
 
+.project-technologies {
+  list-style: none;
+  padding: 0;
+}
+
 .project-buttons {
   display: flex;
   justify-content: center;

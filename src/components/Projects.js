@@ -17,7 +17,12 @@ function Projects() {
             />
           </div>
           <div className="project-content">
-            <p>Tic Tac Toe GAME</p>
+            <h3>Tic Tac Toe GAME</h3>
+            <ul className="project-technologies">
+              <li>JS</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
             <div className="project-buttons">
               {/* Try It Button */}
               <a
