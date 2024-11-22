@@ -1,7 +1,11 @@
 import React from 'react';
-import profPic from '../assets/pictures/prof_pic.JPEG';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCode, faGraduationCap, faLanguage } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCode,
+  faGraduationCap,
+  faLanguage,
+  faPersonChalkboard,
+} from '@fortawesome/free-solid-svg-icons';
 import './SoftSkills.css';
 
 function SoftSkills() {
@@ -10,22 +14,39 @@ function SoftSkills() {
       <div className="soft-skills-container">
         {/* Intro Section */}
         <div className="soft-skills-section intro">
-           
-          <h2>Hi, I'm Kyrylo (or Kyro)</h2>
-          <p>
-            Passionate about growth and contributing to impactful projects, both individually and within teams.
-          </p>
+          <div className="soft-skills-tittle">
+            <h2>My Social Activity</h2>
+            <FontAwesomeIcon icon={faPersonChalkboard} className="icon" />
+          </div>
+          <h3>What has been accomplished:</h3>
+          <div className="soft-skills-activities">
+            <ul>
+              <li>Coaching adults</li>
+              <li>Teaching children</li>
+              <li>Volunteering</li>
+            </ul>
+          </div>
         </div>
 
         {/* Skills Section */}
         <div className="soft-skills-section skillset">
           <FontAwesomeIcon icon={faCode} className="icon" />
-          <h3>Key Soft Skills</h3>
+          <h3>Responsibilities:</h3>
           <ul>
-            <li>Effective Communication</li>
-            <li>Team Collaboration</li>
-            <li>Problem-Solving</li>
-            <li>Adaptability</li>
+            <li>
+              Organization of classes <br /> and events
+            </li>
+            <li>
+              Communication <br /> and problem-solving
+            </li>
+            <li>
+              Maintaining and creating <br /> forms in Google Docs
+            </li>
+            <li>
+              Content creation and posting on <br />  Instagram, WhatsApp, and
+              YouTube
+            </li>
+            <li>Video editing</li>
           </ul>
         </div>
 
@@ -33,8 +54,14 @@ function SoftSkills() {
         <div className="soft-skills-section projects">
           <h3>Social Projects</h3>
           <p>Organized community coding workshops to empower beginners.</p>
-          <p>Volunteered as a mentor in educational programs for underprivileged youth.</p>
-          <p>Led a team project promoting environmental awareness through tech solutions.</p>
+          <p>
+            Volunteered as a mentor in educational programs for underprivileged
+            youth.
+          </p>
+          <p>
+            Led a team project promoting environmental awareness through tech
+            solutions.
+          </p>
           <FontAwesomeIcon icon={faGraduationCap} className="icon" />
         </div>
 

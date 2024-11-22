@@ -57,7 +57,7 @@
   transform: translateX(10px); /* Slightly shift even sections right */
 }
 
-.intro {
+.about-section .intro {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,10 +79,8 @@
 .profile-pic-frame img {
   width: 100%;
   height: auto;
-  
   transition: transform 0.3s ease-in-out;
 }
-
 
 .profile-pic-frame::after {
   content: '';
@@ -96,7 +94,6 @@
   pointer-events: none; /* Ensure it doesn’t interfere with interactions */
   z-index: 1; /* Place above the image */
   transition: transform 0.3s ease-out;
-
 }
 
 .profile-pic-frame::before {
@@ -112,9 +109,6 @@
   z-index: 0; /* Place below the image */
 
 }
-
-
-
 
 .about-section:hover .profile-pic {
   transform: scale(1.5);

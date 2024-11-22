@@ -19,8 +19,8 @@
 
 .soft-skills-section {
   flex: 1;
-  padding: 20px;
-  text-align: center;
+  /* padding: 20px; */
+  text-align: start;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
@@ -38,35 +38,58 @@
   transform: translateX(10px);
 }
 
-/* Intro Section */
-.intro {
+.soft-skills-section .intro {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   z-index: 100;
 }
- 
- 
- 
-/* Headings */
-h2 {
+
+.soft-skills-tittle {
+  display: flex;
+  align-items: center;
+}
+
+.soft-skills-tittle .icon {
+  margin: 0;
+  height: 3rem;
+}
+
+.soft-skills-tittle h2 {
   margin: 10px 0;
   color: #333;
 }
 
-h3 {
+.soft-skills-section h3 {
   margin: 10px 0;
   color: #0073e6;
 }
 
-/* Skills Section */
-.skillset ul {
+.soft-skills-activities ul {
   list-style: none;
   padding: 0;
+  margin: 0;
+  text-align: start;
+  width: auto;
+}
+
+.soft-skills-activities li {
+  
+  padding: 0;
+  margin: 0;
+}
+ 
+.soft-skills-activities li::before {
+  content: '\1F5F9';
+  color: #0073e6;
+  font-size: 1.1em;
+  margin-right: 2%; 
+  /* padding: 0; */
 }
 
 .skillset li {
-  margin: 5px 0;
+  padding: 0;
+  margin: 0;
   font-size: 1.1rem;
   color: #0073e6;
 }
@@ -79,7 +102,6 @@ h3 {
 
 /* Languages Section */
 .languages ul {
-  list-style: none;
   padding: 0;
 }
 
@@ -90,12 +112,12 @@ h3 {
 
 .languages li::before {
   content: '🌐 ';
-  margin-right: 8px;
+  /* margin-right: 8px; */
 }
 
 /* Icons */
 .icon {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #0073e6;
   margin: 10%;
 }
