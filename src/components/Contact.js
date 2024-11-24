@@ -99,7 +99,7 @@ export default function Contacts() {
   };
 
   return (
-    <section id="contacts">
+    <section id="contact">
       <h2>Contact Me</h2>
       <form onSubmit={handleSubmit}>
         <label>

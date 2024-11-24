@@ -20,7 +20,7 @@ function SoftSkills() {
             <FontAwesomeIcon icon={faPersonChalkboard} className="icon" />
           </div>
           <div className="soft-skills-tittle-container">
-            <div className="soft-skills-activities">
+            <div className="soft-skills-acomplished">
               <h3>What has been accomplished:</h3>
               <ul>
                 <li>Coaching adults</li>
@@ -29,7 +29,7 @@ function SoftSkills() {
               </ul>
             </div>
 
-            <div className="skillset">
+            <div className="soft-skills-responsebities">
               <h3>Responsibilities:</h3>
               <ul>
                 <li>
@@ -54,6 +54,41 @@ function SoftSkills() {
         <div className="soft-skills-section photo">
           <img src={newYear} alt="Project 1 Thumbnail" />
         </div>
+
+        {/* Projects Section */}
+        <div className="soft-skills-section projects">
+          <h3>Social Projects</h3>
+          <p>Organized community coding workshops to empower beginners.</p>
+          <p>
+            Volunteered as a mentor in educational programs for underprivileged
+            youth.
+          </p>
+          <p>
+            Led a team project promoting environmental awareness through tech
+            solutions.
+          </p>
+          <FontAwesomeIcon icon={faGraduationCap} className="icon" />
+        </div>
+
+        {/* Languages Section */}
+        <div className="soft-skills-section languages">
+          <FontAwesomeIcon icon={faLanguage} className="icon" />
+          <h3>Languages</h3>
+          <ul>
+            <li>English - B2</li>
+            <li>Spanish - B1 (DELE)</li>
+            <li>Ukrainian - Fluent</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="soft-skills-section photo">
+        <img src={newYear} alt="Project 1 Thumbnail" />
+      </div>
+
+      {/* Background Waves */}
+      <div className="soft-skills-background">
+        {/* The background can be customized here */}
       </div>
     </section>
   );

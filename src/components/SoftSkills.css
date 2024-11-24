@@ -3,14 +3,15 @@
   padding: 20px;
   background-color: rgba(240, 242, 245, 0.7);
   border-radius: 20px;
-  margin: 4% 2%;
+  margin: 1% 2%;
   overflow: hidden;
 }
 
 .soft-skills-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -18,12 +19,18 @@
 }
 
 .soft-skills-section {
-  flex: 1;
+  box-sizing: border-box;
+  flex: 1 50%;
   /* padding: 20px; */
   text-align: start;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 15px;
 }
 
 .soft-skills-section:hover {
@@ -40,9 +47,14 @@
 
 .soft-skills-section .intro {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   /* align-items: center; */
   z-index: 100;
+}
+
+.soft-skills-tittle-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .soft-skills-tittle {
@@ -71,19 +83,26 @@
   margin: 0;
   text-align: start;
   width: auto;
+} 
+
+.skillset ul {
+  list-style-type: square;
+  list-style-position: inside;
+  padding: 0;
+  margin: 0;
+  text-align: start;
 }
 
 .soft-skills-activities li {
-  
   padding: 0;
   margin: 0;
 }
- 
+
 .soft-skills-activities li::before {
   content: '\1F5F9';
   color: #0073e6;
   font-size: 1.1em;
-  margin-right: 2%; 
+  margin-right: 2%;
   /* padding: 0; */
 }
 
@@ -148,30 +167,34 @@
 /* Responsive Design */
 @media (max-width: 1140px) {
   .soft-skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 'intro intro intro' 'skillset projects languages';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .intro {
-    grid-area: intro;
+  .soft-skills-tittle-container  {
+    justify-content: space-around;
+  }
+  .soft-skills-tittle-container h3 {
+    max-width: 70%;
   }
 
-  .skillset {
-    grid-area: skillset;
+  .photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .photo img {
+    width: 70%;
+    border-radius: 15px;
   }
 
-  .projects {
-    grid-area: projects;
-  }
-
-  .languages {
-    grid-area: languages;
-  }
 }
 
 @media (max-width: 768px) {
-  .soft-skills-container {
+  .soft-skills-container, .intro, .soft-skills-tittle-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -184,6 +207,15 @@
   .icon {
     margin: 1%;
   }
+
+  .photo {
+    width: 0;
+  }
+}
+
+@media (max-width: 350px) {
+
+
 }
 
 /* Background Waves */
