@@ -1,5 +1,5 @@
 import React from 'react';
-import newYear from '../assets/pictures/newYear.jpg';
+// import newYear from '../assets/pictures/newYear.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCode,
@@ -8,6 +8,7 @@ import {
   faPersonChalkboard,
 } from '@fortawesome/free-solid-svg-icons';
 import './SoftSkills.css';
+import Carousel from './Carousel';
 
 function SoftSkills() {
   return (
@@ -25,8 +26,30 @@ function SoftSkills() {
               <ul>
                 <li>Coaching adults</li>
                 <li>Teaching children</li>
-                <li>Volunteering</li>
+                <li>Volunteering:</li>
               </ul>
+              <a href="https://www.asvona.com/" target="blanc">
+                {' '}
+                <span className="link-text">&#x27A5; Asociación Asvona</span>
+                <div className="progress-line"></div>
+              </a>
+              <a href="https://alasdeucrania.es/" target="blanc">
+                {' '}
+                <span className="link-text">&#x27A5; Alas de Ucrania</span>
+                <div className="progress-line"></div>
+              </a>
+              <a href="https://www.instagram.com/ridna.shkola/" target="blanc">
+                {' '}
+                <span className="link-text">&#x27A5; Ridna Shkola</span>
+                <div className="progress-line"></div>
+              </a>
+              <a
+                href="https://www.pamplona.es/entidades/asociacion-berehynia"
+                target="black"
+              >
+                <span className="link-text">&#x27A5; Asociación Berehynia</span>
+                <div className="progress-line"></div>
+              </a>
             </div>
 
             <div className="skillset">
@@ -52,7 +75,8 @@ function SoftSkills() {
         </div>
 
         <div className="soft-skills-section photo">
-          <img src={newYear} alt="Project 1 Thumbnail" />
+          {/* <img src={newYear} alt="Project 1 Thumbnail" /> */}
+          <Carousel />
         </div>
       </div>
     </section>

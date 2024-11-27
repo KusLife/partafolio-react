@@ -6,6 +6,7 @@ import Projects from './components/Projects';
 import Footer from './components/Footer';
 import SoftSkills from './components/SoftSkills';
 
+
 function App() {
   return (
     <div className="App">

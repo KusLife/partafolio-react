@@ -83,7 +83,7 @@
   margin: 0;
   text-align: start;
   width: auto;
-} 
+}
 
 .skillset ul {
   list-style-type: square;
@@ -113,6 +113,25 @@
   color: #0073e6;
 }
 
+.soft-skills-activities a {
+  color: #000000;
+  text-decoration: none;
+  
+}
+
+
+.progress-line {
+  height: 2px;
+  background-color: #0073e6;
+  width: 20%;
+  transition: width 0.3s ease-in-out;
+  
+}
+
+.soft-skills-activities a:hover .progress-line {
+  width: 70%;  
+}
+ 
 /* Projects Section */
 .projects p {
   font-size: 1rem;
@@ -173,7 +192,7 @@
     justify-content: space-between;
   }
 
-  .soft-skills-tittle-container  {
+  .soft-skills-tittle-container {
     justify-content: space-around;
   }
   .soft-skills-tittle-container h3 {
@@ -184,17 +203,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
   }
   .photo img {
     width: 70%;
     border-radius: 15px;
   }
-
 }
 
 @media (max-width: 768px) {
-  .soft-skills-container, .intro, .soft-skills-tittle-container {
+  .soft-skills-container,
+  .intro,
+  .soft-skills-tittle-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -214,8 +233,6 @@
 }
 
 @media (max-width: 350px) {
-
-
 }
 
 /* Background Waves */
