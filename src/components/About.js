@@ -75,17 +75,18 @@ function About() {
           <FontAwesomeIcon icon={faCode} className="icon" />
           <h3>Skills</h3>
           <ul>
-            <li>JavaScript & React</li>
             <li>CSS & HTML</li>
+            <li>JavaScript & React</li>
             <li>Responsive Design</li>
-            <li>Node.js, Git, Figma</li>
+            <li>Node.js, Git, VSCode</li>
+            <li>Figma, WordPress, GPT & AIs</li>
           </ul>
         </div>
 
         {/* Part 3: Experience & Education */}
         <div className="about-section experience">
           <h3>Experience & Education</h3>
-          <p>Completed Online Courses</p>
+          <p>2022 Completed Online Courses</p>
           <p>Self-Taught</p>
           <p>Project-Based Experience</p>
           <FontAwesomeIcon icon={faGraduationCap} className="icon" />
