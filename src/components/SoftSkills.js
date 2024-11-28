@@ -1,5 +1,5 @@
 import React from 'react';
-// import newYear from '../assets/pictures/newYear.jpg';
+import newYear from '../assets/pictures/newYear.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCode,
@@ -14,49 +14,52 @@ function SoftSkills() {
   return (
     <section className="soft-skills">
       <div className="soft-skills-container">
+
         {/* Intro Section */}
         <div className="soft-skills-section intro">
-          <div className="soft-skills-tittle">
+          <div className="soft-skills-title">
             <h2>My Social Activity</h2>
             <FontAwesomeIcon icon={faPersonChalkboard} className="icon" />
           </div>
-          <div className="soft-skills-tittle-container">
+
+          <div className="soft-skills-title-container">
+            {/* Activities Section */}
             <div className="soft-skills-activities">
-              <h3>What has been accomplished:</h3>
+              <h3>Achievements:</h3>
               <ul>
                 <li>Coaching adults</li>
                 <li>Teaching children</li>
                 <li>Volunteering:</li>
               </ul>
-              <a href="https://www.asvona.com/" target="blanc">
-                {' '}
+
+              {/* Volunteer Links */}
+              <a href="https://www.asvona.com/" target="_blank" rel="noopener noreferrer">
                 <span className="link-text">&#x27A5; Asociación Asvona</span>
                 <div className="progress-line"></div>
               </a>
-              <a href="https://alasdeucrania.es/" target="blanc">
-                {' '}
+
+              <a href="https://alasdeucrania.es/" target="_blank" rel="noopener noreferrer">
                 <span className="link-text">&#x27A5; Alas de Ucrania</span>
                 <div className="progress-line"></div>
               </a>
-              <a href="https://www.instagram.com/ridna.shkola/" target="blanc">
-                {' '}
+
+              <a href="https://www.instagram.com/ridna.shkola/" target="_blank" rel="noopener noreferrer">
                 <span className="link-text">&#x27A5; Ridna Shkola</span>
                 <div className="progress-line"></div>
               </a>
-              <a
-                href="https://www.pamplona.es/entidades/asociacion-berehynia"
-                target="black"
-              >
+
+              <a href="https://www.pamplona.es/entidades/asociacion-berehynia" target="_blank" rel="noopener noreferrer">
                 <span className="link-text">&#x27A5; Asociación Berehynia</span>
                 <div className="progress-line"></div>
               </a>
             </div>
 
+            {/* Responsibilities Section */}
             <div className="skillset">
               <h3>Responsibilities:</h3>
               <ul>
                 <li>
-                  Organization of classes <br /> and events
+                  Organizing classes <br /> and events
                 </li>
                 <li>
                   Communication <br /> and problem-solving
@@ -74,7 +77,9 @@ function SoftSkills() {
           </div>
         </div>
 
+        {/* Photo Section */}
         <div className="soft-skills-section photo">
+          {/* Uncomment the line below if you prefer a static image */}
           {/* <img src={newYear} alt="Project 1 Thumbnail" /> */}
           <Carousel />
         </div>

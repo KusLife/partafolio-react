@@ -65,3 +65,17 @@
 .nav-btn:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+@media (max-width: 1140px) {
+  .carousel-container {
+  max-width: 800px;
+  /* width: 100%; */
+  }
+}
+
+@media (max-width: 350px) {
+  .carousel-container {
+    display: none;
+  }
+}
