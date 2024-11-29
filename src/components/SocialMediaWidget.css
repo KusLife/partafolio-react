@@ -1,0 +1,61 @@
+/* SocialMediaWidget.css */
+.social-media-widget {
+  position: fixed;
+  top: 35%;
+  right: 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000; /* Ensure it's above most elements */
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  /* background-color: #0073e6; */
+  color: #0073e6;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+ 
+
+.social-media-icon {
+  position: relative;
+  margin: 10px 0;
+  font-size: 24px;
+  color: #333;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.social-media-icon:hover {
+  color: #0073e6; /* Change color on hover */
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  background-color: #9fa0a1e7;
+  transform: scale(1.1);
+}
+
+.tooltip {
+  position: absolute;
+  top: 50%;
+  right: 50px; /* Adjust based on your layout */
+  transform: translateY(-50%);
+  background-color: #3333336c;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.social-media-icon:hover .tooltip {
+  opacity: 1; /* Show the tooltip on hover */
+}
