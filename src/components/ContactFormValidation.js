@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
 import './Contact.css';
 import Modal from './Modal';
-import emailjs from 'emailjs-com';
-import Loader from './LoaderAnimation';
-import './LoaderAnimation.css';
 
-export default function Contacts() {
+
+export default function ContactFormValidation({formData,}) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
-  const [loading, setLoading] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [nameValidationMsg, setNameValidationMsg] = useState('');
   const [nameLength, setNameLength] = useState(0);
   const [messageLength, setMessageLength] = useState(0);
 
-  const handleChange = (e) => {
+  
+  const FormValidation = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
@@ -46,7 +44,7 @@ export default function Contacts() {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
     // Name validation (min 3, max 50 characters)
@@ -84,33 +82,13 @@ export default function Contacts() {
       return;
     }
 
-    setLoading(true);
-
-    // API request to emailjs
-    try {
-      await emailjs.send(
-        'service_j5ft7l',
-        'template_wbo982c',
-        formData,
-        'wegXSo1hPZMcbaPfj'
-      );
-      setModalMessage(`Thank You, ${formData.name}! We'll get in touch soon.`);
-      setIsModalOpen(true);
-      setFormData({
-        name: '',
-        email: '',
-        message: '',
-      });
-    } catch (error) {
-      console.error('Failed to send message:', error); // Log error
-      setModalMessage(
-        `Failed to send message. Please try again later, ${formData.name}.`
-      ); // Error message
-      setIsModalOpen(true);
-    } finally {
-      setLoading(false);
-      
-    }
+    setModalMessage(`Thank You, ${formData.name}! We'll get in touch soon.`);
+    setIsModalOpen(true);
+    setFormData({
+      name: '',
+      email: '',
+      message: '',
+    });
 
     // Reset validation messages and character counts
     setNameValidationMsg('');
@@ -121,6 +99,10 @@ export default function Contacts() {
   const closeModal = () => {
     setIsModalOpen(false);
   };
+
+
+
+
 
   return (
     <section id="contact">
@@ -161,16 +143,8 @@ export default function Contacts() {
             required
           ></textarea>
         </label>
-        {loading && (
-          <div className="loader">
-            <div className="spinner"></div>
-            <p>Sending your message...</p>
-          </div>
-        )}
         <button type="submit">Send</button>
       </form>
-      {/* {Loader.loading && <Loader/>} */}
-
       {isModalOpen && <Modal message={modalMessage} onClose={closeModal} />}
     </section>
   );
