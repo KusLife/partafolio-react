@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import onRNE from '../assets/pictures/onRNE.jpg';
-import ridnaShcola from '../assets/pictures/RidnaShcola.jpg';
-import newYear from '../assets/pictures/newYear.jpg';
-import sportGroup from '../assets/pictures/sportGroup.jpg';
-import sportGroupSala from '../assets/pictures/sportGroupSala.jpg';
-import ridnaShcolaVish from '../assets/pictures/rshVish.jpg';
-import intervew from '../assets/pictures/intervew.jpg';
+import onRNE from '../../assets/pictures/onRNE.jpg';
+import ridnaShcola from '../../assets/pictures/RidnaShcola.jpg';
+import newYear from '../../assets/pictures/newYear.jpg';
+import sportGroup from '../../assets/pictures/sportGroup.jpg';
+import sportGroupSala from '../../assets/pictures/sportGroupSala.jpg';
+import ridnaShcolaVish from '../../assets/pictures/rshVish.jpg';
+import intervew from '../../assets/pictures/intervew.jpg';
 import './Carousel.css'; // CSS for styling
 
 const images = [

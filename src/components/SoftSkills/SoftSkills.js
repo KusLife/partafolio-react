@@ -1,5 +1,4 @@
 import React from 'react';
-import newYear from '../assets/pictures/newYear.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCode,
@@ -8,13 +7,12 @@ import {
   faPersonChalkboard,
 } from '@fortawesome/free-solid-svg-icons';
 import './SoftSkills.css';
-import Carousel from './Carousel';
+import Carousel from '../Carousel/Carousel';
 
 function SoftSkills() {
   return (
     <section className="soft-skills">
       <div className="soft-skills-container">
-
         {/* Intro Section */}
         <div className="soft-skills-section intro">
           <div className="soft-skills-title">
@@ -33,22 +31,38 @@ function SoftSkills() {
               </ul>
 
               {/* Volunteer Links */}
-              <a href="https://www.asvona.com/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.asvona.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="link-text">&#x27A5; Asociación Asvona</span>
                 <div className="progress-line"></div>
               </a>
 
-              <a href="https://alasdeucrania.es/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://alasdeucrania.es/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="link-text">&#x27A5; Alas de Ucrania</span>
                 <div className="progress-line"></div>
               </a>
 
-              <a href="https://www.instagram.com/ridna.shkola/" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.instagram.com/ridna.shkola/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="link-text">&#x27A5; Ridna Shkola</span>
                 <div className="progress-line"></div>
               </a>
 
-              <a href="https://www.pamplona.es/entidades/asociacion-berehynia" target="_blank" rel="noopener noreferrer">
+              <a
+                href="https://www.pamplona.es/entidades/asociacion-berehynia"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span className="link-text">&#x27A5; Asociación Berehynia</span>
                 <div className="progress-line"></div>
               </a>
@@ -79,8 +93,6 @@ function SoftSkills() {
 
         {/* Photo Section */}
         <div className="soft-skills-section photo">
-          {/* Uncomment the line below if you prefer a static image */}
-          {/* <img src={newYear} alt="Project 1 Thumbnail" /> */}
           <Carousel />
         </div>
       </div>

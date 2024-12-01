@@ -1,23 +1,25 @@
 import React, { useState } from 'react';
 import './Contact.css';
-import Modal from './Modal';
+import Modal from '../Modal/Modal';
+import Loader from '../Animation/LoaderAnimation';
+import { sendEmail } from '../../assets/services/ContactService';
+import { validateFormData } from '../../assets/services/FormValidation';
 
-
-export default function ContactFormValidation({formData,}) {
+export default function Contacts() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   });
 
+  const [loading, setLoading] = useState(false);
   const [modalMessage, setModalMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [nameValidationMsg, setNameValidationMsg] = useState('');
   const [nameLength, setNameLength] = useState(0);
   const [messageLength, setMessageLength] = useState(0);
 
-  
-  const FormValidation = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
@@ -44,21 +46,8 @@ export default function ContactFormValidation({formData,}) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Name validation (min 3, max 50 characters)
-    if (formData.name.length < 3) {
-      setModalMessage('Name must be at least 3 characters long.');
-      setIsModalOpen(true);
-      return;
-    }
-
-    if (formData.name.length > 50) {
-      setModalMessage('Name cannot be longer than 50 characters.');
-      setIsModalOpen(true);
-      return;
-    }
 
     // Basic validation
     if (!formData.name || !formData.email || !formData.message) {
@@ -67,42 +56,46 @@ export default function ContactFormValidation({formData,}) {
       return;
     }
 
-    // Check email format using a regex
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(formData.email)) {
-      setModalMessage('Please enter a valid email address.');
+    // Validate form data using the service
+    const { isValid, errors } = validateFormData(formData);
+
+    if (!isValid) {
+      const { nameError, emailError, messageError } = errors;
+      setModalMessage(nameError || emailError || messageError);
       setIsModalOpen(true);
       return;
     }
 
-    // Minimum message length check
-    if (formData.message.length < 10) {
-      setModalMessage('Message must be at least 10 characters long.');
-      setIsModalOpen(true);
-      return;
-    }
+    setLoading(true);
 
-    setModalMessage(`Thank You, ${formData.name}! We'll get in touch soon.`);
-    setIsModalOpen(true);
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
+    // API request to email
+    try {
+      await sendEmail(formData);
+      setModalMessage(`Thank You, ${formData.name}! We'll get in touch soon.`);
+      setIsModalOpen(true);
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+      });
+    } catch (error) {
+      console.error('Failed to send message:', error); // Log error
+      setModalMessage(
+        `Failed to send message. Please try again later, ${formData.name}.`
+      );
+      setIsModalOpen(true);
+    } finally {
+      setLoading(false);
+    }
 
     // Reset validation messages and character counts
     setNameValidationMsg('');
     setMessageLength(0);
-    setNameLength(0); // Only if you have a length indicator for the name
+    setNameLength(0);
   };
-
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-
-
-
 
   return (
     <section id="contact">
@@ -143,8 +136,11 @@ export default function ContactFormValidation({formData,}) {
             required
           ></textarea>
         </label>
+
+        {loading && <Loader />}
         <button type="submit">Send</button>
       </form>
+
       {isModalOpen && <Modal message={modalMessage} onClose={closeModal} />}
     </section>
   );

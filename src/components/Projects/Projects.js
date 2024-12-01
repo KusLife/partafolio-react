@@ -1,7 +1,7 @@
 import React from 'react';
-import tic_tac_toe from '../assets/pictures/tic_tac_toe.png';
-import sportApp from '../assets/pictures/sportApp.png';
-import amazonSite from '../assets/pictures/amazonSite.png';
+import tic_tac_toe from '../../assets/pictures/tic_tac_toe.png';
+import sportApp from '../../assets/pictures/sportApp.png';
+import amazonSite from '../../assets/pictures/amazonSite.png';
 import './Projects.css';
 
 function Projects() {

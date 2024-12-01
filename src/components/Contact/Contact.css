@@ -20,9 +20,6 @@ form {
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
-  /* padding: auto 15%; */
-  /* background-color: #f4f4f9; */
-  
   display: flex;
   flex-direction: column;
 }
