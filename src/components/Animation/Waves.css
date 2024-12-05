@@ -1,0 +1,28 @@
+
+.wave-background svg {
+  position: absolute;
+  bottom: 0;
+  left: -2%;
+  width: 110%;
+  z-index: -1; /* Ensures the wave stays behind the content */
+  will-change: transform; /* Optimizes performance */
+}
+
+.wave-background svg:nth-child(1) {
+  bottom: 0;
+}
+.wave-background svg:nth-child(2) {
+  bottom: -20px;
+}
+.wave-background svg:nth-child(3) {
+  bottom: -40px;
+}
+
+.about-section:nth-child(odd) {
+  transform: translateX(-10px); /* Slightly shift odd sections left */
+}
+
+.about-section:nth-child(even) {
+  transform: translateX(10px); /* Slightly shift even sections right */
+}
+

@@ -1,0 +1,23 @@
+{
+  "about": {
+    "title": "Hi, I'm Kyrylo",
+    "description": "I am a frontend developer passionate about learning and building amazing projects."
+  },
+  "languages": {
+    "header": "Languages",
+    "english": "English - B2",
+    "spanish": "Spanish - B1 (DELE)",
+    "ukrainian": "Ukrainian - Fluent"
+  },
+  "skills": {
+    "header": "Experience & Education",
+    "li1": "2022 Completed Online Courses",
+    "li2": "Self-Taught",
+    "li3": "Project-Based Experience"
+  }, "Projects": {
+    "header": "Projects",
+    "projectTitlle": "Tic Tac Toe GAME",
+    "tech": "Tic Tac Toe GAME"
+  }
+
+}

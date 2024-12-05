@@ -140,20 +140,7 @@
   color: #555;
 }
 
-/* Languages Section */
-.languages ul {
-  padding: 0;
-}
-
-.languages li {
-  font-size: 1.1rem;
-  margin: 5px 0;
-}
-
-.languages li::before {
-  content: '🌐 ';
-  /* margin-right: 8px; */
-}
+  
 
 /* Icons */
 .icon {

@@ -5,7 +5,7 @@ import Loader from '../Animation/LoaderAnimation';
 import { sendEmail } from '../../assets/services/ContactService';
 import { validateFormData } from '../../assets/services/FormValidation';
 
-export default function Contacts() {
+export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',

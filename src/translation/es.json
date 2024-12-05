@@ -1,0 +1,13 @@
+
+{
+  "about": {
+    "title": "Holi, soy Kyrylo",
+    "description": "Soy un desarrollador frontend apasionado por aprender y crear proyectos increíbles."
+  },
+  "languages": {
+    "header": "Idiomas",
+    "english": "Inglés - B2",
+    "spanish": "Español - B1 (DELE)",
+    "ukrainian": "Ucraniano - Fluido"
+  }
+}
