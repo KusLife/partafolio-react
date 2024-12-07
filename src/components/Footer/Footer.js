@@ -1,12 +1,14 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaTwitter, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Footer() {
+  const {t} = useLanguage()
   return (
     <footer className="footer">
       <p>
-        &copy; {new Date().getFullYear()} KYRYLO All Rights Reserved.
+        &copy; {new Date().getFullYear()}{t.footer.copirite}
         <span className="social-icons">
           <a
             href="https://github.com/KusLife"

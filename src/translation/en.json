@@ -1,4 +1,5 @@
 {
+  "headerAnimationName": "KYRYLO",
   "about": {
     "title": "Hi, I'm Kyrylo",
     "description": "I am a frontend developer passionate about learning and building amazing projects."
@@ -9,15 +10,89 @@
     "spanish": "Spanish - B1 (DELE)",
     "ukrainian": "Ukrainian - Fluent"
   },
-  "skills": {
+  "education": {
     "header": "Experience & Education",
-    "li1": "2022 Completed Online Courses",
-    "li2": "Self-Taught",
-    "li3": "Project-Based Experience"
-  }, "Projects": {
-    "header": "Projects",
-    "projectTitlle": "Tic Tac Toe GAME",
-    "tech": "Tic Tac Toe GAME"
+    "courses": [
+      "2022 Completed Online Courses",
+      "Self-Taught",
+      "Project-Based Experience"
+    ]
+  },
+  "skills": {
+    "header": "Skills",
+    "Skillset": [
+      "CSS & HTML",
+      "JavaScript & React",
+      "Responsive Design",
+      "Node.js, Git, VSCode",
+      "Figma, WordPress, GPT & AIs"
+    ]
+  },
+  "projects": {
+    "header": "Projects"
+  },
+  "ticTacToe": {
+    "header": "Tic Tac Toe GAME",
+    "stack": ["JS", "HTML", "CSS"],
+    "tryItBtn": "Try It",
+    "repoBtn": "Repository"
+  },
+  "sportNoteBook": {
+    "header": "Sport Note Book",
+    "stack": ["JS", "HTML", "CSS"],
+    "tryItBtn": "Try It",
+    "repoBtn": "Repository",
+    "repoFigmaBtn": "Figma project"
+  },
+  "amazonClone": {
+    "header": "Amazon clone",
+    "stack": ["JS,HTML,CSS", "Jasmin tests"],
+    "tryItBtn": "Visite site",
+    "repoBtn": "Repository"
+  },
+  "mySocialActivity": {
+    "header": "My Social Activity"
+  },
+  "achievements": {
+    "header": "Achievements:",
+    "activities": ["Coaching adults", "Teaching children", "Volunteering:"],
+    "links": {
+      "asvona":"Asociación Asvona",
+      "alas":"Alas de Ucrania",
+      "ridna":"Ridna Shkola",
+      "berehynia":"Asociación Berehynia"
+    }
+  },
+  "responsibilities": {
+    "header": "Responsibilities:",
+    "activities": [
+      "Organizing classes and events",
+      "Communication and problem-solving",
+      "Maintaining and creating forms in Google Docs",
+      "Content creation and posting on Instagram, WhatsApp, and YouTube",
+      "Video editing"
+    ]
+  },
+  "carousel": {
+    "newYear": "Happy New Year Hollidays",
+    "intervew": "An intervew about the situation in Ukraine. Voluntering association \"Alas de Ucrania\" 2023.",
+    "ridnaShcola": "Voluntaring as a fisical activity couch with aproximate 50 children in \"Ridna Shkola\".",
+    "ridnaShcolaVish": "Preparing with the team and children cultural events \"Ridna Shkola\" 2023-2024.",
+    "sportGroup": "Personal project of couching adults for more then a year. With voluntering association \"Berehynia\".",
+    "sportGroupSala": "About 30 person in general was in the group. 2023-2024",
+"onRNE": "An intervew on radio. Voluntaring organosation \"Alas de Ucrania\" 2023."
+  },
+  "contactFoem": {
+    "header": "Contact Me",
+    "name": "Name:",
+    "email": "Email:",
+    "message": "Message:",
+    "sendBtn": "Send"
+  },
+  "footer": {
+    "copirite": " KYRYLO All Rights Reserved."
+  },
+  "socialMediaTooltip": {
+    "cv": "Download CV"
   }
-
 }

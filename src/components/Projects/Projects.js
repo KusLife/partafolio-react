@@ -2,12 +2,15 @@ import React from 'react';
 import tic_tac_toe from '../../assets/pictures/tic_tac_toe.png';
 import sportApp from '../../assets/pictures/sportApp.png';
 import amazonSite from '../../assets/pictures/amazonSite.png';
+import { useLanguage } from '../../contexts/LanguageContext';
 import './Projects.css';
 
 function Projects() {
+  const { t } = useLanguage();
+
   return (
     <section className="projects-section">
-      <h2>Projects</h2>
+      <h2>{t.projects.header}</h2>
       <div className="projects-grid">
         {/* Project 1 */}
         <div className="project-card">
@@ -19,7 +22,7 @@ function Projects() {
             />
           </div>
           <div className="project-content">
-            <h3>Tic Tac Toe GAME</h3>
+            <h3>{t.ticTacToe.header}</h3>
             <ul className="project-technologies">
               <li>JS</li>
               <li>HTML</li>
@@ -33,7 +36,7 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="try-it-btn"
               >
-                Try It
+                {t.ticTacToe.tryItBtn}
               </a>
 
               {/* Learn More Button */}
@@ -43,7 +46,7 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="learn-more-btn"
               >
-                Repository
+                {t.ticTacToe.repoBtn}
               </a>
             </div>
           </div>
@@ -60,7 +63,7 @@ function Projects() {
           </div>
 
           <div className="project-content">
-            <h3>Sport Note Book</h3>
+            <h3>{t.sportNoteBook.header}</h3>
             {/* <ul className="project-technologies">
               <li>JS</li>
               <li>HTML</li>
@@ -69,12 +72,13 @@ function Projects() {
             <div className="project-buttons">
               {/* Try It Button */}
               {/* <a
-                href="https://kuslife.github.io/tic_tac_toe/"
+                href="https://kuslife.github/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="try-it-btn"
               >
-                Try It
+              {t.sportNoteBook.tryItBtn}
+
               </a> */}
 
               {/* Learn More Button */}
@@ -84,7 +88,7 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="learn-more-btn"
               >
-                Figma project
+                {t.sportNoteBook.repoFigmaBtn}
               </a>
             </div>
           </div>
@@ -98,7 +102,7 @@ function Projects() {
             />
           </div>
           <div className="project-content">
-            <h3>Amazon clone</h3>
+            <h3>{t.amazonClone.header}</h3>
             <ul className="project-technologies">
               <li>JS,HTML,CSS</li>
               <li>Jasmin tests</li>
@@ -112,7 +116,7 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="try-it-btn"
               >
-                Visite site
+                {t.amazonClone.tryItBtn}
               </a>
               {/* Learn More Button */}
               <a
@@ -121,7 +125,7 @@ function Projects() {
                 rel="noopener noreferrer"
                 className="learn-more-btn"
               >
-                Repository
+                {t.amazonClone.repoBtn}
               </a>
             </div>
           </div>

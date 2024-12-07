@@ -1,8 +1,8 @@
 import React from 'react';
 import { useLanguage } from '../../contexts/LanguageContext';
-import './Languages.css'
+import './Languages.css';
 
-const Languages = () => {
+const LanguagesSwither = () => {
   const { t, switchLanguage } = useLanguage();
 
   return (
@@ -20,7 +20,6 @@ const Languages = () => {
             <span className="slider"></span>
           </label>
           {t.languages.english}
-
         </li>
         <li>
           <label className="toggle-switch">
@@ -28,12 +27,10 @@ const Languages = () => {
               type="radio"
               name="language"
               onClick={() => switchLanguage('es')}
-              defaultChecked
             />
             <span className="slider"></span>
           </label>
           {t.languages.spanish}
-
         </li>
         <li>
           <label className="toggle-switch">
@@ -41,16 +38,14 @@ const Languages = () => {
               type="radio"
               name="language"
               onClick={() => switchLanguage('ua')}
-              defaultChecked
             />
             <span className="slider"></span>
           </label>
           {t.languages.ukrainian}
-
         </li>
       </ul>
     </div>
   );
 };
 
-export default Languages;
+export default LanguagesSwither;

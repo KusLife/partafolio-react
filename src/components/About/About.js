@@ -7,13 +7,16 @@ import {
   faLanguage,
 } from '@fortawesome/free-solid-svg-icons';
 // import LanguageToggle from '../Lang/LanguageToggle';
-import Languages from '../Lang/Languages';
+import LanguagesSwither from '../Lang/Languages';
 import Waves from '../Animation/Waves';
 import './About.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 function About() {
   const { t } = useLanguage();
+
+  const educationListHtml = t.education.courses.map((curs, i) => <p key={i}>{curs}</p>);
+
   return (
     <section className="about">
       <div className="about-container">
@@ -22,8 +25,8 @@ function About() {
           <div className="profile-pic-frame">
             <img src={prof_pic} alt="Your Name" className="profile-pic" />
           </div>
-          <h2>{ t.about.title }</h2>
-          <p>{ t.about.description}</p>
+          <h2>{t.about.title}</h2>
+          <p>{t.about.description}</p>
         </div>
 
         {/* Part 2: Core Skills */}
@@ -41,24 +44,15 @@ function About() {
 
         {/* Part 3: Experience & Education */}
         <div className="about-section experience">
-          <h3>Experience & Education</h3>
-          <p>2022 Completed Online Courses</p>
-          <p>Self-Taught</p>
-          <p>Project-Based Experience</p>
+          <h3>{t.education.header}</h3>
+          {educationListHtml}
           <FontAwesomeIcon icon={faGraduationCap} className="icon" />
         </div>
 
         {/* Part 4: Languages */}
         <div className="about-section languages">
           <FontAwesomeIcon icon={faLanguage} className="icon" />
-          <Languages />
-          {/* <LanguageToggle/> */}
-          {/* <h3>Languages</h3>
-          <ul>
-            <li>English - B2</li>
-            <li>Spanish - B1 (DELE)</li>
-            <li>Ukrainian - Fluent</li>
-          </ul> */}
+          <LanguagesSwither />
         </div>
       </div>
 

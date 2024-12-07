@@ -4,8 +4,10 @@ import Modal from '../Modal/Modal';
 import Loader from '../Animation/LoaderAnimation';
 import { sendEmail } from '../../assets/services/ContactService';
 import { validateFormData } from '../../assets/services/FormValidation';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 export default function Contact() {
+  const {t} = useLanguage()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -99,10 +101,10 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <h2>Contact Me</h2>
+      <h2>{t.contactFoem.header}</h2>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:{' '}
+          {t.contactFoem.name}{' '}
           {nameValidationMsg && (
             <span className="validation-message">{nameValidationMsg}</span>
           )}
@@ -116,7 +118,7 @@ export default function Contact() {
           />
         </label>
         <label>
-          Email:
+        {t.contactFoem.email}
           <input
             type="email"
             name="email"
@@ -126,7 +128,7 @@ export default function Contact() {
           />
         </label>
         <label>
-          Message:
+        {t.contactFoem.message}
           <span className="char-count">{messageLength}/500</span>
           <textarea
             name="message"
@@ -138,7 +140,7 @@ export default function Contact() {
         </label>
 
         {loading && <Loader />}
-        <button type="submit">Send</button>
+        <button type="submit">{t.contactFoem.sendBtn}</button>
       </form>
 
       {isModalOpen && <Modal message={modalMessage} onClose={closeModal} />}

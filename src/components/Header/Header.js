@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './Header.css';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 function Header() {
+  const { t } = useLanguage();
   const containerRef = useRef(null);
   const [showName, setShowName] = useState(false);
   const [restartFlow, setRestartFlow] = useState(false);
@@ -115,7 +117,7 @@ function Header() {
     <header>
       <div className="h1-container" ref={containerRef}>
         {allHidden ? (
-          <h1 className="center-name">KYRYLO</h1>
+          <h1 className="center-name">{t.headerAnimationName}</h1>
         ) : (
           words.map((word, index) => (
             <span

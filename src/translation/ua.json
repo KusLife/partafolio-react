@@ -1,4 +1,5 @@
 {
+  "headerAnimationName": "КИРИЛО",
   "about": {
     "title": "Про мене",
     "description": "Я фронтенд-розробник, захоплений навчанням і створенням чудових проєктів."
@@ -8,6 +9,87 @@
     "english": "Англійська - B2",
     "spanish": "Іспанська - B1 (DELE)",
     "ukrainian": "Українська - Вільнa"
+  },
+  "education": {
+    "header": "Досвід і Освіта",
+    "courses": ["2022 Завершені онлайн-курси", "Самоучка", "Досвід з проектів"]
+  },
+  "skills": {
+    "header": "Навички",
+    "Skillset": [
+      "CSS & HTML",
+      "JavaScript & React",
+      "Responsive Design",
+      "Node.js, Git, VSCode",
+      "Figma, WordPress, GPT & AIs"
+    ]
+  },
+  "projects": {
+    "header": "Проекти"
+  },
+  "ticTacToe": {
+    "header": "Гра «Хрестики-нолики».",
+    "stack": ["JS", "HTML", "CSS"],
+    "tryItBtn": "Спробувати",
+    "repoBtn": "Репозиторій"
+  },
+  "sportNoteBook": {
+    "header": "Спортивний Зошит",
+    "stack": ["JS", "HTML", "CSS"],
+    "tryItBtn": "Спробувати",
+    "repoBtn": "Репозиторій",
+    "repoFigmaBtn": "Проект Figma"
+  },
+  "amazonClone": {
+    "header": "Клон Amazon",
+    "stack": ["JS,HTML,CSS", "Тести з Jasmin"],
+    "tryItBtn": "Відвідати сайт",
+    "repoBtn": "Репозиторій"
+  },
+  "mySocialActivity": {
+    "header": "Моя Соціальна Діяльність"
+  },
+  "achievements": {
+    "header": "Досягнення:",
+    "activities": ["Тренування дорослих", "Навчання дітей", "Волонтерство з:"],
+    "links": {
+      "asvona": "Asociación Asvona",
+      "alas": "Alas de Ucrania",
+      "ridna": "Ridna Shkola",
+      "berehynia": "Asociación Berehynia"
+    }
+  },
+  "responsibilities": {
+    "header": "Обов'язки:",
+    "activities": [
+      "Організація занять та заходів.",
+      "Комунікація та вирішення проблем.",
+      "Створення та підтримка форм у Google Docs.",
+      "Створення та публікація контенту в Instagram, WhatsApp і YouTube.",
+      "Редагування відео"
+    ]
+  },
+  "carousel": {
+    "newYear": "Щасливих Новорічних Свят",
+    "intervew": "Інтерв'ю про ситуацію в Україні. Волонтерська асоціація \"Крила України\" 2023.",
+    "ridnaShcola": "Волонтерство - тренер фізичних активностей приблизно з 50 дітьми в \"Рідна Школа\".",
+    "ridnaShcolaVish": "Підготовка культурних заходів разом із командою та дітьми в \"Рідна Школа\" 2023-2024.",
+    "sportGroup": "Особистий проект - тренувань для дорослих, понад рік. З волонтерською асоціацією \"Берегиня\".",
+    "sportGroupSala": "Загалом у групі було близько 30 осіб. 2023-2024.",
+    "onRNE": "Інтерв'ю на радіо. Волонтерська організація \"Крила України\" 2023."
+  },
+  "contactFoem": {
+    "header": "Зв'яжіться зі мною",
+    "name": "Ім'я:",
+    "email": "Електронна пошта:",
+    "message": "Повідомлення:",
+    "sendBtn": "Надіслати"
+  },
+  "footer": {
+    "copirite": " КИРИЛО Усі права захищено."
+  },
+  "socialMediaTooltip": {
+    "cv": "Завантажити CV"
   }
-}
 
+}

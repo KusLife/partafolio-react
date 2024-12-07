@@ -1,5 +1,5 @@
-
 {
+  "headerAnimationName": "KYRYLO",
   "about": {
     "title": "Holi, soy Kyrylo",
     "description": "Soy un desarrollador frontend apasionado por aprender y crear proyectos increíbles."
@@ -9,5 +9,94 @@
     "english": "Inglés - B2",
     "spanish": "Español - B1 (DELE)",
     "ukrainian": "Ucraniano - Fluido"
+  },
+  "education": {
+    "header": "Experience & Education",
+    "courses": [
+      "2022 Cursos en línea completados",
+      "Autodidacta",
+      "Experiencia basada en proyectos"
+    ]
+  },
+  "skills": {
+    "header": "Skills",
+    "Skillset": [
+      "CSS & HTML",
+      "JavaScript & React",
+      "Responsive Design",
+      "Node.js, Git, VSCode",
+      "Figma, WordPress, GPT & AIs"
+    ]
+  },
+  "projects": {
+    "header": "Proyectos"
+  },
+  "ticTacToe": {
+    "header": "Juego de tres en raya",
+    "stack": ["JS", "HTML", "CSS"],
+    "tryItBtn": "Pruébalo",
+    "repoBtn": "Repositorio"
+  },
+  "sportNoteBook": {
+    "header": "Cuaderno de notas deportivo",
+    "stack": ["JS", "HTML", "CSS"],
+    "tryItBtn": "Pruébalo",
+    "repoBtn": "Repositorio",
+    "repoFigmaBtn": "Proyecto Figma"
+  },
+  "amazonClone": {
+    "header": "Clon de Amazon",
+    "stack": ["JS,HTML,CSS", "Pruebas de Jasmin"],
+    "tryItBtn": "Visita el sitio",
+    "repoBtn": "Repositorio"
+  },
+  "mySocialActivity": {
+    "header": "Mi actividad social"
+  },
+  "achievements": {
+    "header": "Logros:",
+    "activities": [
+      "Entrenamiento de adultos",
+      "Enseñando a los niños",
+      "Voluntariado:"
+    ],
+    "links": {
+      "asvona": "Asociación Asvona",
+      "alas": "Alas de Ucrania",
+      "ridna": "Ridna Shkola",
+      "berehynia": "Asociación Berehynia"
+    }
+  },
+  "responsibilities": {
+    "header": "Responsabilidades:",
+    "activities": [
+      "Organización de clases y eventos.",
+      "Comunicación y resolución de problemas.",
+      "Mantenimiento y creación de formularios en Google Docs.",
+      "Creación y publicación de contenido en Instagram, WhatsApp y YouTube.",
+      "Edición de vídeo"
+    ]
+  },
+  "carousel": {
+    "newYear": "Felices fiestas de Año Nuevo",
+    "intervew": "Una entrevista sobre la situación en Ucrania. Asociación de voluntariado \"Alas de Ucrani\"; 2023.",
+    "ridnaShcola": "Voluntariado como entrenador de actividades físicas con aproximadamente 50 niños en \"Ridna Shkola\".",
+    "ridnaShcolaVish": "Preparación de eventos culturales con el equipo y los niños en \"Ridna Shkola\" 2023-2024.",
+    "sportGroup": "Proyecto personal de entrenamiento para adultos por más de un año. Con la asociación de voluntariado \"Berehynia\".",
+    "sportGroupSala": "En total, participaron aproximadamente 30 personas en el grupo. 2023-2024.",
+    "onRNE": "Una entrevista en la radio con Asociación de voluntariado \"Alas de Ucrania\" 2023."
+  },
+  "contactFoem": {
+    "header": "Contáctame",
+    "name": "Nombre:",
+    "email": "Correo:",
+    "message": "Mensaje:",
+    "sendBtn": "Enviar"
+  },
+  "footer": {
+    "copirite": " KYRYLO Todos derechos reservados."
+  },
+  "socialMediaTooltip": {
+    "cv": "Descargar CV"
   }
 }

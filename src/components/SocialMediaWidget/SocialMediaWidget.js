@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { FaFileAlt, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { useLanguage } from '../../contexts/LanguageContext';
 import './SocialMediaWidget.css';
 
 const SocialMediaWidget = () => {
   const [hoveredIcon, setHoveredIcon] = useState(null); // Track which icon is hovered
+  const { t } = useLanguage();
+
 
   const socialMedia = [
-    { name: 'Download CV', icon: <FaFileAlt />, url: '/path/to/your-cv.pdf' },
+    { name: t.socialMediaTooltip.cv, icon: <FaFileAlt />, url: '/path/to/your-cv.pdf' },
     {
       name: 'LinkedIn',
       icon: <FaLinkedin />,

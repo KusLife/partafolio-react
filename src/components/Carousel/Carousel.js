@@ -7,21 +7,30 @@ import sportGroup from '../../assets/pictures/sportGroup.jpg';
 import sportGroupSala from '../../assets/pictures/sportGroupSala.jpg';
 import ridnaShcolaVish from '../../assets/pictures/rshVish.jpg';
 import intervew from '../../assets/pictures/intervew.jpg';
+import { useLanguage } from '../../contexts/LanguageContext';
 import './Carousel.css'; // CSS for styling
+import { i } from 'framer-motion/client';
 
-const images = [
-  { src: newYear, description: "Happy New Year Hollidays", alt: 'New Year pic' },
-  { src: intervew, description: 'An intervew about the situation in Ukraine. Voluntering association "Alas de Ucrania" 2023', alt: 'Street intervew' },
-  { src: ridnaShcola, description: 'Voluntaring as a fisical activity couch with aproximate 50 children in "Ridna Shkola" ', alt: 'Voluntaring' },
-  { src: ridnaShcolaVish, description: 'Preparing with the team and children cultural events "Ridna Shkola" 2023-2024', alt: 'Intervew on radio' },
-  { src: sportGroup, description: 'Personal project of couching adults for more then a year. With voluntering association "Berehynia"', alt: 'sport Group' },
-  { src: sportGroupSala, description: 'About 30 person in general was in the group. 2023-2024', alt: 'sport Group' },
-  { src: onRNE, description: 'An intervew on radio. Voluntaring organosation "Alas de Ucrania" 2023', alt: 'Intervew on radio' },
-];
+
+
+
 
 
 function Carousel() {
+  const {t} = useLanguage()
   const [currentIndex, setCurrentIndex] = useState(0);
+
+
+  const images = [
+    { src: newYear, description: t.carousel.newYear, alt: 'New Year pic' },
+    { src: intervew, description: t.carousel.intervew, alt: 'Street intervew' },
+    { src: ridnaShcola, description: t.carousel.ridnaShcola, alt: 'Voluntaring' },
+    { src: ridnaShcolaVish, description: t.carousel.ridnaShcolaVish, alt: 'Intervew on radio' },
+    { src: sportGroup, description: t.carousel.sportGroup, alt: 'sport Group' },
+    { src: sportGroupSala, description: t.carousel.sportGroupSala, alt: 'sport Group' },
+    { src: onRNE, description:  t.carousel.onRNE, alt: 'Intervew on radio' },
+  ];
+
   // Auto-slide every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
