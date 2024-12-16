@@ -4,8 +4,6 @@
   height: 400px;
   margin: 20px auto;
   overflow: hidden;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-slide {
@@ -18,13 +16,14 @@
   position: absolute;
   top: 0;
   left: 0;
+  
 }
 
 .carousel-slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-bottom: 3px solid #0073e6;
+  border: #0073e6 solid 2px;
 }
 
 .carousel-description {
@@ -37,6 +36,7 @@
   color: white;
   text-align: center;
   font-size: 1rem;
+  border-radius: 0 0 15px 15px;
 }
 
 .nav-btn {
@@ -47,7 +47,6 @@
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   border: none;
-  /* padding: 10px 15px; */
   cursor: pointer;
   font-size: 1.5rem;
   border-radius: 50%;
@@ -70,7 +69,6 @@
 @media (max-width: 1140px) {
   .carousel-container {
   max-width: 800px;
-  /* width: 100%; */
   }
 }
 

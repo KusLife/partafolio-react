@@ -6,7 +6,7 @@ import {
   faLanguage,
   faPersonChalkboard,
 } from '@fortawesome/free-solid-svg-icons';
-import Carousel from '../Carousel/Carousel';
+import Carousel from '../Animation/Carousel';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './SoftSkills.css';
 

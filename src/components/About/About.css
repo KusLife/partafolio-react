@@ -39,6 +39,7 @@
 .profile-pic-frame {
   width: 100%;
   height: auto;
+  border: rgba(21, 19, 19, .5) solid 2px;
   border-radius: 10%;
   overflow: hidden;
 
@@ -62,7 +63,7 @@
   right: 0;
   bottom: 0;
   border-radius: 15px; /* Match the border-radius of the image */
-  background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 1) 90%);
+  /* background: radial-gradient(circle, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0) 90%); */
   pointer-events: none; /* Ensure it doesn’t interfere with interactions */
   z-index: 1; /* Place above the image */
   transition: transform 0.3s ease-out;
@@ -76,7 +77,7 @@
   right: -5%;
   bottom: -5%;
   border-radius: 15px; /* Match the image's corners */
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.2), transparent);
+  /* background: radial-gradient(circle, rgba(0, 0, 0, 0), transparent); */
   filter: blur(30px); /* Creates the soft blur around the image */
   z-index: 0; /* Place below the image */
 

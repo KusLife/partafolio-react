@@ -34,8 +34,10 @@
   background-color: #ccc;
   transition: 0.4s;
   border-radius: 34px;
-  width: 34px;
-  height: 20px;
+  border: rgba(21, 19, 19, 0.4) solid 1px;
+
+  width: 36px;
+  height: 22px;
 }
 
 .slider:before {
