@@ -10,27 +10,40 @@ import intervew from '../../assets/pictures/intervew.jpg';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Carousel.css'; // CSS for styling
 
-
-
-
-
-
 function Carousel() {
-  const {t} = useLanguage()
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
-
 
   const images = [
     { src: newYear, description: t.carousel.newYear, alt: 'New Year pic' },
     { src: intervew, description: t.carousel.intervew, alt: 'Street intervew' },
-    { src: ridnaShcola, description: t.carousel.ridnaShcola, alt: 'Voluntaring' },
-    { src: ridnaShcolaVish, description: t.carousel.ridnaShcolaVish, alt: 'Intervew on radio' },
+    {
+      src: ridnaShcola,
+      description: t.carousel.ridnaShcola,
+      alt: 'Voluntaring',
+    },
+    {
+      src: ridnaShcolaVish,
+      description: t.carousel.ridnaShcolaVish,
+      alt: 'Intervew on radio',
+    },
     { src: sportGroup, description: t.carousel.sportGroup, alt: 'sport Group' },
-    { src: sportGroupSala, description: t.carousel.sportGroupSala, alt: 'sport Group' },
-    { src: onRNE, description:  t.carousel.onRNE, alt: 'Intervew on radio' },
+    {
+      src: sportGroupSala,
+      description: t.carousel.sportGroupSala,
+      alt: 'sport Group',
+    },
+    { src: onRNE, description: t.carousel.onRNE, alt: 'Intervew on radio' },
   ];
 
   // Auto-slide every 10 seconds
+
+  const handlePrev = () => {
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
   const handleNext = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
@@ -42,20 +55,13 @@ function Carousel() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
-  
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
-    );
-  };
-
   return (
     <div className="carousel-container">
       <button className="nav-btn left-btn" onClick={handlePrev}>
-          ❮
+        ❮
       </button>
 
-      <AnimatePresence mode='wait'>
+      <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
           initial={{ opacity: 0.5, x: 100 }}
@@ -64,8 +70,6 @@ function Carousel() {
           transition={{ duration: 0.3 }}
           className="carousel-slide"
         >
-        
-          
           <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
           <p className="carousel-description">
             {images[currentIndex].description}
@@ -74,7 +78,7 @@ function Carousel() {
       </AnimatePresence>
 
       <button className="nav-btn right-btn" onClick={handleNext}>
-          ❯
+        ❯
       </button>
     </div>
   );

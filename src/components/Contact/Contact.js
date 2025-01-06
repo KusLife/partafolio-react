@@ -18,7 +18,7 @@ export default function Contact() {
   const [modalMessage, setModalMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [nameValidationMsg, setNameValidationMsg] = useState('');
-  const [nameLength, setNameLength] = useState(0);
+  const [ , setNameLength] = useState(0);
   const [messageLength, setMessageLength] = useState(0);
 
   const handleChange = (e) => {

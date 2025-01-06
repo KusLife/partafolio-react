@@ -5,8 +5,9 @@ import { useLanguage } from '../../contexts/LanguageContext';
 function Header() {
   const { t } = useLanguage();
   const containerRef = useRef(null);
-  const [showName, setShowName] = useState(false);
-  const [restartFlow, setRestartFlow] = useState(false);
+  const [ , setShowName] = useState(false);
+  const [ , setRestartFlow] = useState(false);
+  
 
   const words = [
     'JavaScript',
