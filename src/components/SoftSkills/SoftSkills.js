@@ -1,9 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faCode,
-  faGraduationCap,
-  faLanguage,
   faPersonChalkboard,
 } from '@fortawesome/free-solid-svg-icons';
 import Carousel from '../Animation/Carousel';

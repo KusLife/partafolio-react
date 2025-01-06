@@ -9,7 +9,6 @@ import ridnaShcolaVish from '../../assets/pictures/rshVish.jpg';
 import intervew from '../../assets/pictures/intervew.jpg';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Carousel.css'; // CSS for styling
-import { i } from 'framer-motion/client';
 
 
 
@@ -32,6 +31,10 @@ function Carousel() {
   ];
 
   // Auto-slide every 10 seconds
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
@@ -39,10 +42,7 @@ function Carousel() {
     return () => clearInterval(interval);
   }, [currentIndex]);
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
+  
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
