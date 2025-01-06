@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import onRNE from '../../assets/pictures/onRNE.jpg';
 import ridnaShcola from '../../assets/pictures/RidnaShcola.jpg';
@@ -38,22 +38,23 @@ function Carousel() {
 
   // Auto-slide every 10 seconds
 
-  const handlePrev = () => {
+   // Memoize the handleNext function to prevent unnecessary re-renders
+   const handleNext = useCallback(() => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  }, [images.length]);
+
+  const handlePrev = useCallback(() => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? images.length - 1 : prevIndex - 1
     );
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
+  }, [images.length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
     }, 10000);
     return () => clearInterval(interval);
-  }, [currentIndex]);
+  }, [handleNext]);
 
   return (
     <div className="carousel-container">

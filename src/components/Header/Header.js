@@ -96,6 +96,7 @@ function Header() {
         clearTimeout(fadeTimeout);
       };
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [allHidden]);
 
   const [dots, setDots] = useState([]);
