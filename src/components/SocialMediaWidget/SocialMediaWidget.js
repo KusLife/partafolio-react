@@ -9,7 +9,7 @@ const SocialMediaWidget = () => {
 
 
   const socialMedia = [
-    { name: t.socialMediaTooltip.cv, icon: <FaFileAlt />, url: '/path/to/your-cv.pdf' },
+    { name: t.socialMediaTooltip.cv, icon: <FaFileAlt />, fileName: 'Sierbinov_Kyrylo_CV.pdf' , url: '/Sierbinov_Kyrylo_CV.pdf' },
     {
       name: 'LinkedIn',
       icon: <FaLinkedin />,
@@ -28,7 +28,8 @@ const SocialMediaWidget = () => {
       href={platform.url}
       rel="noopener noreferrer"
       className="social-link social-media-icon"
-      target="blank"
+      target='blank'
+      download={platform.fileName || null}
       key={index}
       onMouseEnter={() => setHoveredIcon(platform.name)}
       onMouseLeave={() => setHoveredIcon(null)}
