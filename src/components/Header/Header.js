@@ -117,6 +117,9 @@ function Header() {
 
   return (
     <header>
+      <div className='headr-icon'>
+      <img src="logo512.png" alt="site logo" />
+      </div>
       <div className="h1-container" ref={containerRef}>
         {allHidden ? (
           <h1 className="center-name">{t.headerAnimationName}</h1>
