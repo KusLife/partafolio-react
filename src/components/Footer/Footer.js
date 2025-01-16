@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaInstagram, FaFileAlt } from 'react-icons/fa';
 import './Footer.css';
 import { useLanguage } from '../../contexts/LanguageContext';
 
@@ -30,6 +30,13 @@ export default function Footer() {
             rel="noopener noreferrer"
           >
             <FaInstagram />
+          </a>
+          <a
+            href="/Sierbinov_Kyrylo_CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFileAlt />
           </a>
         </span>
       </p>

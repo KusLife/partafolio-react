@@ -1,4 +1,3 @@
-/* SocialMediaWidget.css */
 .social-media-widget {
   position: fixed;
   top: 35%;
@@ -6,7 +5,11 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
-  z-index: 1000; /* Ensure it's above most elements */
+  z-index: 1000;
+}
+
+.social-media-widget.stuck {
+  display: none;
 }
 
 .social-link {
@@ -15,7 +18,6 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  /* background-color: #0073e6; */
   color: #0073e6;
   border: 2px solid white;
   border-radius: 50%;
@@ -23,7 +25,6 @@
   font-size: 24px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
- 
 
 .social-media-icon {
   position: relative;
@@ -34,8 +35,8 @@
 }
 
 .social-media-icon:hover {
-  color: #0073e6; /* Change color on hover */
-  transform: scale(1.2); /* Slightly enlarge on hover */
+  color: #0073e6;
+  transform: scale(1.2);
   background-color: #9fa0a1e7;
   transform: scale(1.1);
 }
@@ -43,7 +44,7 @@
 .tooltip {
   position: absolute;
   top: 50%;
-  right: 50px; /* Adjust based on your layout */
+  right: 50px;
   transform: translateY(-50%);
   background-color: #3333336c;
   color: #fff;
@@ -57,5 +58,12 @@
 }
 
 .social-media-icon:hover .tooltip {
-  opacity: 1; /* Show the tooltip on hover */
+  opacity: 1;
 }
+
+/* Ensure widgets remain fixed for larger screens */
+/* @media (min-width: 768px) {
+  .social-media-widget {
+    position: fixed;
+  }
+} */
