@@ -9,9 +9,9 @@
 
 .soft-skills-container {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  justify-content: space-around;
-  /* align-items: flex-start; */
+  /* justify-content: space-around; */
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
@@ -21,7 +21,6 @@
 .soft-skills-section {
   box-sizing: border-box;
   flex: 1 50%;
-  /* padding: 20px; */
   text-align: start;
   position: relative;
   overflow: hidden;
@@ -55,7 +54,7 @@
 .soft-skills-title-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .soft-skills-title {
@@ -190,19 +189,6 @@
   .soft-skills-title-container h3 {
     max-width: 70%;
   }
-
-  /* .soft-skills-section .photo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    width: 100%;
-  } */
-
-  /* .photo img {
-    width: 70%;
-    border-radius: 15px;
-  } */
 }
 
 @media (max-width: 768px) {
@@ -215,17 +201,13 @@
   }
 
   .soft-skills-section {
-    width: 80%;
+    width: 100%;
   }
 
   .icon {
     margin: 1%;
   }
 
-  /* .soft-skills-section .photo {
-    width: auto;
-    height: auto;
-  } */
 }
 
 @media (max-width: 350px) {
