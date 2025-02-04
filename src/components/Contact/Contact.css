@@ -12,9 +12,17 @@ section#contact h2 {
   margin: 2%;
 }
 
+section#contact h2 a {
+  font-size: 90%;
+  color: #4e4d4d;
+}
+
 section#contact p {
   font-size: 1.1rem;
 }
+
+
+
 
 form {
   max-width: 600px;
@@ -27,14 +35,14 @@ form {
 label {
   position: relative;
   font-size: 1rem;
-  margin-bottom: 10px;
+  margin: 0;
 }
 
 input,
 textarea {
   padding: 10px;
   font-size: 1rem;
-  margin: 5px 0 20px;
+  margin: 5px 0 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
