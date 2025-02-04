@@ -25,13 +25,13 @@ function About() {
           <div className="profile-pic-frame">
             <img src={prof_pic} alt="Your Name" className="profile-pic" />
           </div>
-          <h2>{t.about.title}</h2>
+          <h2 className='about-name'>{t.about.title}</h2>
           <p>{t.about.description}</p>
         </div>
 
         {/* Part 2: Core Skills */}
         <div className="about-section skills">
-          <FontAwesomeIcon icon={faCode} className="icon" />
+          <FontAwesomeIcon icon={faCode} className="about-icons" />
           <h3>Skills</h3>
           <ul>
             <li>CSS & HTML</li>
@@ -46,12 +46,12 @@ function About() {
         <div className="about-section experience">
           <h3>{t.education.header}</h3>
           {educationListHtml}
-          <FontAwesomeIcon icon={faGraduationCap} className="icon" />
+          <FontAwesomeIcon icon={faGraduationCap} className="about-icons" />
         </div>
 
         {/* Part 4: Languages */}
         <div className="about-section languages">
-          <FontAwesomeIcon icon={faLanguage} className="icon" />
+          <FontAwesomeIcon icon={faLanguage} className="about-icons" />
           <LanguagesSwither />
         </div>
       </div>

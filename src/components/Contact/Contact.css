@@ -13,8 +13,9 @@ section#contact h2 {
 }
 
 section#contact h2 a {
+  font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 90%;
-  color: #4e4d4d;
+  color: #555;
 }
 
 section#contact p {

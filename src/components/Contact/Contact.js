@@ -102,7 +102,7 @@ export default function Contact() {
   return (
     <section id="contact">
       <h2>{t.contactFoem.header} <a className='contactSection-header'>
-      kyrylofcial@gmail.com</a></h2>
+      kyryloficial@gmail.com</a></h2>
       <form onSubmit={handleSubmit}>
         <label>
           {t.contactFoem.name}{' '}

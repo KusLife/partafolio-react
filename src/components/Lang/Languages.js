@@ -6,7 +6,7 @@ const LanguagesSwither = () => {
   const { t, switchLanguage } = useLanguage();
 
   return (
-    <div className="about-section languages">
+    <div>
       <h3>{t.languages.header}</h3>
       <ul>
         <li>

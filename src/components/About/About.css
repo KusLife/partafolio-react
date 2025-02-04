@@ -20,7 +20,7 @@
 .about-section {
   flex: 1;
   padding: 20px;
-  text-align: center;
+  text-align: start;
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
@@ -72,10 +72,10 @@
 .profile-pic-frame::before {
   content: '';
   position: absolute;
-  top: -5%;
-  left: -5%;
-  right: -5%;
-  bottom: -5%;
+  top: -2%;
+  left: -2%;
+  right: -2%;
+  bottom: -2%;
   border-radius: 15px; /* Match the image's corners */
   /* background: radial-gradient(circle, rgba(0, 0, 0, 0), transparent); */
   filter: blur(30px); /* Creates the soft blur around the image */
@@ -84,7 +84,7 @@
 }
 
 .about-section:hover .profile-pic {
-  transform: scale(1.5);
+  transform: scale(1.1);
 }
 
 .intro h2 {
@@ -108,24 +108,9 @@
   font-size: 1rem;
   color: #555;
 }
-/* 
-.languages ul {
-  list-style: none;
-  padding: 0;
-} */
-
-/* .languages li {
-  font-size: 1.1rem;
-  margin: 5px 0;
-} */
-
-/* .languages li::before {
-  content: '🌐 ';
-  margin-right: 8px;
-} */
-
-.icon {
-  font-size: 2.5rem;
+ 
+.about-icons {
+  font-size: 2rem;
   color: #0073e6;
   margin: 10%;
 }
@@ -157,8 +142,12 @@
 @media (max-width: 1140px) {
   .about-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    grid-template-columns: repeat(3, 1fr); 
     grid-template-areas: 'intro intro intro' 'skills experience languages';
+  }
+
+  .intro h2 {
+    margin-left: 5%;
   }
 
   .about-section.intro {
@@ -181,18 +170,19 @@
 @media (max-width: 768px) {
   .about-container {
     display: flex;
-    justify-content: space-around; /* Align sections horizontally */
-    flex-direction: column; /* Stack sections vertically on small screens */
+    justify-content: space-around;
+    flex-direction: column;
     align-items: center;
   }
 
   .about-section {
-    width: 80%; /* Allow sections to take up more space on small screens */
+    padding-bottom: 0px;
   }
 
-  .icon {
-    margin: 1%;
+  .about-icons {
+    display: none;
   }
+
 
   .wave-background svg {
     position: absolute;

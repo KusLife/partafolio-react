@@ -1,14 +1,18 @@
 .about-section.languages ul {
   list-style: none;
   padding: 0;
+  min-width: 188px;
 }
 
 .about-section.languages li {
   display: flex;
-  align-items: start;
+  /* align-items: start; */
+  white-space: nowrap;
   /* justify-content: space-between; */
+  margin-bottom: 10px;
 }
- 
+
+
 
 .toggle-switch {
   position: relative;
@@ -36,6 +40,7 @@
   border-radius: 34px;
   border: rgba(21, 19, 19, 0.4) solid 1px;
 
+  /* margin-right: 15px; */
   width: 36px;
   height: 22px;
 }
@@ -56,3 +61,5 @@ input:checked + .slider {
 input:checked + .slider:before {
   transform: translateX(14px);
 }
+
+
