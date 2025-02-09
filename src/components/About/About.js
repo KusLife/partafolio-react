@@ -1,5 +1,5 @@
 import React from 'react';
-import prof_pic from '../../assets/pictures/prof_pic.JPEG';
+import prof_pic from '../../assets/pictures/prof_pic.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faCode,
