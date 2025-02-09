@@ -2,11 +2,12 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import onRNE from '../../assets/pictures/onRNE.jpg';
 import ridnaShcola from '../../assets/pictures/RidnaShcola.jpg';
-import newYear from '../../assets/pictures/newYear.jpg';
+// import newYear from '../../assets/pictures/newYear.jpg';
 import sportGroup from '../../assets/pictures/sportGroup.jpg';
 import sportGroupSala from '../../assets/pictures/sportGroupSala.jpg';
 import ridnaShcolaVish from '../../assets/pictures/rshVish.jpg';
 import intervew from '../../assets/pictures/intervew.jpg';
+import krai2025 from '../../assets/pictures/krai2025.jpg';
 import { useLanguage } from '../../contexts/LanguageContext';
 import './Carousel.css'; // CSS for styling
 
@@ -15,31 +16,60 @@ function Carousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const images = [
-    { src: newYear, description: t.carousel.newYear, alt: 'New Year pic' },
-    { src: intervew, description: t.carousel.intervew, alt: 'Street intervew' },
+    // {
+    //   src: newYear,
+    //   description: t.carousel.newYear,
+    //   alt: 'New Year pic',
+    //   loading: 'lazy',
+    // },
+    {
+      src: intervew,
+      description: t.carousel.intervew,
+      alt: 'Street intervew',
+      loading: 'lazy',
+    },
     {
       src: ridnaShcola,
       description: t.carousel.ridnaShcola,
       alt: 'Voluntaring',
+      loading: 'lazy',
     },
     {
       src: ridnaShcolaVish,
       description: t.carousel.ridnaShcolaVish,
       alt: 'Intervew on radio',
+      loading: 'lazy',
     },
-    { src: sportGroup, description: t.carousel.sportGroup, alt: 'sport Group' },
+    {
+      src: sportGroup,
+      description: t.carousel.sportGroup,
+      alt: 'sport Group',
+      loading: 'lazy',
+    },
     {
       src: sportGroupSala,
       description: t.carousel.sportGroupSala,
       alt: 'sport Group',
+      loading: 'lazy',
     },
-    { src: onRNE, description: t.carousel.onRNE, alt: 'Intervew on radio' },
+    {
+      src: onRNE,
+      description: t.carousel.onRNE,
+      alt: 'Intervew on radio',
+      loading: 'lazy',
+    },
+    {
+      src: krai2025,
+      description: t.carousel.krai2025,
+      alt: 'Kongres Krai 2025',
+      loading: 'lazy',
+    },
   ];
 
   // Auto-slide every 10 seconds
 
-   // Memoize the handleNext function to prevent unnecessary re-renders
-   const handleNext = useCallback(() => {
+  // Memoize the handleNext function to prevent unnecessary re-renders
+  const handleNext = useCallback(() => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   }, [images.length]);
 
