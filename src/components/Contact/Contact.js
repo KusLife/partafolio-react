@@ -101,8 +101,8 @@ export default function Contact() {
 
   return (
     <section id="contact">
-      <h2>{t.contactFoem.header} <a className='contactSection-header'>
-      kyryloficial@gmail.com</a></h2>
+      <h2>{t.contactFoem.header} <span className='contactSection-header'>
+      kyryloficial@gmail.com</span></h2>
       <form onSubmit={handleSubmit}>
         <label>
           {t.contactFoem.name}{' '}
